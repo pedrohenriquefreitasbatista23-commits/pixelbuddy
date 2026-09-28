@@ -1,0 +1,70 @@
+{
+  "version": 1,
+  "author": "Pixel Buddy",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "wokwi-esp32-devkit-v1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-ili9341",
+      "id": "tft1",
+      "top": -260,
+      "left": 400,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_cor",
+      "top": 340,
+      "left": -20,
+      "attrs": { "color": "blue", "key": "1", "label": "COR (tecla 1)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_reset",
+      "top": 340,
+      "left": 140,
+      "attrs": { "color": "yellow", "key": "2", "label": "RESET (tecla 2)" }
+    },
+    {
+      "type": "wokwi-pushbutton",
+      "id": "btn_estudo",
+      "top": 340,
+      "left": 300,
+      "attrs": { "color": "green", "key": "3", "label": "ESTUDO (tecla 3)" }
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": 340,
+      "left": 460,
+      "attrs": { "volume": "0.1" }
+    }
+  ],
+  "connections": [
+    [ "tft1:VCC", "esp:3V3",   "red",    [] ],
+    [ "tft1:GND", "esp:GND.1", "black",  [] ],
+    [ "esp:D5",   "tft1:CS",   "orange", [] ],
+    [ "esp:D4",   "tft1:RST",  "purple", [] ],
+    [ "tft1:D/C", "esp:D2",    "blue",   [] ],
+    [ "tft1:MOSI","esp:D23",   "yellow", [] ],
+    [ "tft1:SCK", "esp:D18",   "green",  [] ],
+
+    [ "esp:D15", "btn_cor:1.l",   "blue",  [] ],
+    [ "btn_cor:2.l", "esp:GND.2", "black", [] ],
+
+    [ "esp:TX2", "btn_reset:1.l",   "gold",  [] ],
+    [ "btn_reset:2.l", "esp:GND.1", "black", [] ],
+
+    [ "esp:RX2", "btn_estudo:1.l",   "green", [] ],
+    [ "btn_estudo:2.l", "esp:GND.2", "black", [] ],
+
+    [ "esp:D25", "bz1:2",     "purple", [] ],
+    [ "bz1:1",   "esp:GND.1", "black",  [] ]
+  ]
+}

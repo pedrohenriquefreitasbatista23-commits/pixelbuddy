@@ -1,0 +1,24 @@
+Pixel Buddy — firmware olhos estilo Neo (versão fluida)
+=======================================================
+
+1. Abra o projeto Wokwi:
+   https://wokwi.com/projects/476337121727684609
+
+2. Cole o conteúdo de sketch.ino no editor (substitui o código antigo).
+
+3. Bibliotecas (já usadas no projeto):
+   - Adafruit GFX Library
+   - Adafruit ILI9341
+
+O que mudou nesta versão (mais fluida no Wokwi):
+  - Redesenho a ~20 fps (50 ms) em vez de 30 fps
+  - Lerp mais lento e estável
+  - Bug de offset de posição dos olhos corrigido
+  - Animações reduzidas (pisca + olhar ocasional)
+  - Boca e lids mais simples (menos formas por frame)
+  - Sem flicker de riso/confusão (pesado no simulador)
+
+Botões:
+  tecla 1  COR     cicla a cor (menta = cor do vídeo)
+  tecla 2  RESET   reinicia
+  tecla 3  ESTUDO  cronômetro
